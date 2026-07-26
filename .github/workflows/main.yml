@@ -306,3 +306,33 @@ jobs:
           path: |
             Installer/SbiePlus_a64/*
           retention-days: 60
+
+  Release:
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    needs: [Build_x64_Qt6, Build_ARM64_Qt6]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download x64 artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: Sandboxie_x64
+          path: release_artifacts/x64
+
+      - name: Download ARM64 artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: Sandboxie_ARM64
+          path: release_artifacts/ARM64
+
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ci-build-${{ github.run_number }}
+          name: CI Build #${{ github.run_number }}
+          body: "自动构建 ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          files: release_artifacts/**/*
+          fail_on_unmatched_files: false
+          generate_release_notes: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
