@@ -8,7 +8,7 @@ In order to bypass the licensing restrictions of the Sandboxie Plus part, I will
 6. Click on the "Run WorkFlow" button to execute the CI build for the master branch
 7. When build is completed, enter the CI page and download "Sandboxie_X64.zip" (or the generated result of the corresponding bit)
 8. Unzip the relevant into a directory
-9. Unzip the compressed package provided in the release Assests and copy it to the folder of the previous step, replacing all existing files
+9. Unzip the compressed package provided in the release Assets and copy it to the folder of the previous step, replacing all existing files
 10. Open Sandman.exe file in the directory and enjoy your Sandboxie-Plus
 
 为了规避Sandboxie仓库Plus部分的许可证限制，我不会在发行版中公布与Plus模块相关二进制文件，而仅仅分发受到GPL协议约束的Classic部分二进制文件。如果你想要去使用Plus版本，请做如下操作：
@@ -20,7 +20,7 @@ In order to bypass the licensing restrictions of the Sandboxie Plus part, I will
 6.点击“Run WorkFlow"按钮，为master分支执行CI构建
 7.构建完成后进入CI页面，下载Sandboxie_X64.zip（或者相应系统位数的生成结果）
 8.解压相关文件到一个目录中
-9.将发行版中Assests中提供的压缩包解压并复制到上一步中的文件夹中，替换所有现有文件
+9.将发行版中Assets中提供的压缩包解压并复制到上一步中的文件夹中，替换所有现有文件
 10.打开目录中的Sandman.exe文件，享受你的Sandboxie-Plus
 
 Note: If you already have a normal version of Sandboxie installed on your system, or if you want to update to a new version, please perform following steps before proceeding to step 10 of the main process:
